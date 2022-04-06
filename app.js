@@ -1,3 +1,9 @@
+/**
+ * @Author: Your name
+ * @Date:   2022-03-31 23:16:48
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2022-04-06 15:46:18
+ */
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +12,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var zodiacRouter = require('./routes/zodiac')
 
 var app = express();
 
@@ -20,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/zodiac', zodiacRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
