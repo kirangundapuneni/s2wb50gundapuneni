@@ -9,4 +9,9 @@ block content
     div(class="container-fluid")
         div(class="row")
             each zodiac , index in results
-                div(class="col-sm-2") #{zodiac.zodiac_name} - #{zodiac.zodiac_meaning} - #{zodiac.lucky_number}
+                div(class="col-sm-2" onclick=`buy(${index+1})`) #{zodiac.zodiac_name} - #{zodiac.zodiac_meaning} - #{zodiac.lucky_number}
+
+    script.
+      function buy(index){
+          alert(`You purchased item ${index}`);
+      }            
